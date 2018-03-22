@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form action="{{ url_for('profile') }}" method="POST" class="form-signin"> 
+{{ form.csrf_token }}
+<div class="form-group">
+    {{ form.firstname.label }}
+    {{ form.firstname(class="form-control") }}
+</div>
+<div class="form-group">
+    {{ form.lastname.label }}
+    {{ form.lastname(class="form-control") }}
+</div>
+<div class="form-group">
+    {{ form.email.label }}
+    {{ form.email(class="form-control") }}
+</div>
+<div class="form-group">
+    {{ form.location.label }}
+    {{ form.location(class="form-control") }}
+</div>
+<div class="from-group">
+    {{ form.gender.label }} {{ form.gender(class="radio") }}
+</div>
+<div class="form-group">
+    {{ form.biography.label }}
+    {{ form.biography(class="form-control") }}
+</div>
+<div class="form-group">
+    {{ form.upload.label }}
+    {{ form.upload(class="form-control") }}
+</div>
+<div class="form-group">
+    <button class="btn btn-success">Add User</button>
+</div>
+    
+
+
+
+</form>
+{% endblock %}
